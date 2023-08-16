@@ -4,6 +4,9 @@
         <title>Primer programa en php</title>
     </head>
     <body>
-        <h1>Hola como estas estimados estudiantes, como estasn en este día</h1>
+        <a  href="./vistas/personas">Personas</a>
+        <table>
+
+        </table>
     </body>
 </html>
