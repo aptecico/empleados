@@ -15,7 +15,7 @@
     <body>
         <div class="container">
         <div  class="alert alert-primary text-center" role="alert">
-           <h3> Listado de personas</h3> <a class="btn btn-success" href="./crear.php">Crear Nuevo</a>
+           <h3> Listado de personas</h3> <a class="btn btn-success" href="./formulario.php">Crear Nuevo</a>
         </div>
         <table class="table table-striped">
             <thead class="thead-light">
