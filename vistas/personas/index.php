@@ -45,7 +45,7 @@
                     <td><?php echo $columna['ciudad']; ?></td>
                     <td>
                     <button type="button" class="btn btn-primary">Editar</button>
-                    <button type="button" class="btn btn-danger">Eliminar</button>
+                    <a href="./procesardatos.php?btnEnviar=Eliminar&id=<?php echo $columna['id'];?>" class="btn btn-danger">Eliminar</a>
                     </td>
                 </tr>
                 <?php

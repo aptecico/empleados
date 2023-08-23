@@ -2,19 +2,22 @@
 include('../../conexion/conexion.php');
 //crear las vaariables de los datos recibidos
 
-$requestData['nombre']=$_POST['nombre'];
-$requestData['apellido']=$_REQUEST['apellido'];
-$requestData['edad']=$_REQUEST['edad'];
-$requestData['genero']=$_REQUEST['genero'];
-$requestData['ciudad']=$_REQUEST['ciudad'];
+if(isset($_POST['nombre']))$requestData['nombre']=$_POST['nombre'];
+if(isset($_REQUEST['apellido']))$requestData['apellido']=$_REQUEST['apellido'];
+if(isset($_REQUEST['edad']))$requestData['edad']=$_REQUEST['edad'];
+if(isset($_REQUEST['genero']))$requestData['genero']=$_REQUEST['genero'];
+if(isset($_REQUEST['ciudad']))$requestData['ciudad']=$_REQUEST['ciudad'];
 $accion=$_REQUEST['btnEnviar'];
-
 //=============ACCIONES===============
     switch($accion){
         case 'Guardar':
-            print_r($requestData);
+            
                 store($requestData,$conn);
             break;
+        case 'Eliminar':
+                $id=$_REQUEST['id'];
+                destroy($id,$conn);
+        break;
 
     }
 
@@ -26,7 +29,6 @@ function store($requestData,$conn){
     $edad=$requestData['edad'];
     $genero=$requestData['genero'];
     $ciudad=$requestData['ciudad'];
-   print_r($requestData);
     //crear el script para guardar en la base de datos
     $sql="INSERT INTO personas(nombre,apellido,edad,genero,ciudad)
     VALUES ('$nombre','$apellido','$edad','$genero','$ciudad');
@@ -39,6 +41,16 @@ function store($requestData,$conn){
         echo "Error ".$sql." <br>".mysqli_error($conn);
     }
 
+}
+
+//============================
+function destroy($id,$conn){
+    $sql=" DELETE from personas WHERE id=$id";
+    if(mysqli_query($conn,$sql)){
+        header('Location: ./index.php');
+    }else{
+        echo "Error ".$sql." <br>".mysqli_error($conn);
+    }
 }
 
 
