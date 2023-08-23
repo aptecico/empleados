@@ -18,6 +18,10 @@ $accion=$_REQUEST['btnEnviar'];
                 $id=$_REQUEST['id'];
                 destroy($id,$conn);
         break;
+        case 'Editar':
+            $id=$_REQUEST['id'];
+            edit($id,$conn);
+    break;
 
     }
 
@@ -53,6 +57,10 @@ function destroy($id,$conn){
     }
 }
 
+function edit($id,$conn){
+    $sql="SELECT * FROM personas WHERE id=$id";
+   
+}
 
 
 ?>

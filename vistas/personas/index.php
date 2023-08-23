@@ -44,8 +44,9 @@
                     <td><?php echo $columna['genero']; ?></td>
                     <td><?php echo $columna['ciudad']; ?></td>
                     <td>
-                    <button type="button" class="btn btn-primary">Editar</button>
-                    <a href="./procesardatos.php?btnEnviar=Eliminar&id=<?php echo $columna['id'];?>" class="btn btn-danger">Eliminar</a>
+                    
+                    <a href="./procesardatos.php?btnEnviar=Editar&id=<?php echo $columna['id'];?>" class="btn btn-warning">Editar</a>
+                    <a href="./formuario.php?id=<?php echo $columna['id'];?>" class="btn btn-danger">Eliminar</a>
                     </td>
                 </tr>
                 <?php
